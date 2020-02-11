@@ -18,15 +18,6 @@ function transformFVCOMoutputs_3D(conf_name)
 
 %% Call the model configuration and inputs files
 
-numlon=150; 
-numlat=63;
-kb=6;
-file='C:\TrackMPD-v.2-master\InputDataFVCOM\YRE_0001.nc';
-grid='C:\TrackMPD-v.2-master\InputDataFVCOM\YRE_Geo_noisland_Final.grd';
-time_name='time';
-w_name='ww';
-conf.Data.BaseDir='C:\TrackMPD-v.2-master\InputDataFVCOM';
-
 conf=feval(conf_name);
 
 file = conf.OGCM.FVCOMFile;
