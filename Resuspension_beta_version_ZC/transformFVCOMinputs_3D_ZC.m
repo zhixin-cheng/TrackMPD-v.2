@@ -231,11 +231,17 @@ for i=1:NTimeStamps
     
     % Add a layer for surface and for bottom (for interpolation purpose near the boundaries)
     
+    % ZC important! 
+    Bdep=-BottomDepth; 
+    Bdep(mask_water==0)=0;
+    
     if i==1
-    depth=cat(3,zeros_matrix,depth,BottomDepth);
+    depth=cat(3,zeros_matrix,depth,Bdep);
     end
     
     depth=depth-depth(:,:,1); %Change in the reference system (surface constant, varying bottom)
+    
+   %??depth(:,:,1) is all zero so it doesn't change anything ZC 11/02/20
     
     %Vertical diffusivity
     for j=1:length(siglev(1,:))
@@ -252,6 +258,7 @@ for i=1:NTimeStamps
 
      end
      end
+     
     
    clear Kvaux Kvv
     
