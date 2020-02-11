@@ -1,7 +1,7 @@
 % Run TrackMPD v.1
 
 clear all; close all; clc;
-conf_name='input_conf'; %Name of input file
+conf_name='input_conf_ZC'; %Name of input file
 
 
 %% Step 1
